@@ -5,15 +5,9 @@ import classes from './Product.module.css'
 import {Link} from 'react-router-dom'
 import { DataContext } from '../DataProvider/DataProvider'
 import {Type} from '../../Utility/action.type'
-
 function ProductCard({product,flex,renderDesc,renderAdd}) {
     const { image, title, id, rating, price,description  } = product;
-
       const [state,dispatch]=useContext(DataContext)
-      
-     
-
-
       const addToCart = ()=>{
         dispatch({
             type:Type.ADD_TO_BASKET,
@@ -22,7 +16,6 @@ function ProductCard({product,flex,renderDesc,renderAdd}) {
             }
         })
       }
-  
   return (
     <div  className={`${classes.card__container} ${flex?classes.product__flexed : ''}`}>
         <Link to={`/products/${id}`}>

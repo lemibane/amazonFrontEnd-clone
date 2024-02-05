@@ -3,8 +3,6 @@ import axios from 'axios'
 import ProductCard from './ProductCard'
 import classes from './Product.module.css'
 import Loader from "../Loader/Loder"
-
-
 function Product() {
     const [products, setProducts] = useState()
    const [isLoading, setIsLoading] = useState(false)
@@ -18,9 +16,8 @@ function Product() {
         setIsLoading(false)
       })
     }, [])
-    
+  
   return (
-
   <>
   {
     isLoading?(<Loader/>) : ( <section className={classes.products_container}>
@@ -32,8 +29,6 @@ function Product() {
      </section>)
   }
   </>
-
   )
 }
-
-export default Product
+export default Product;
